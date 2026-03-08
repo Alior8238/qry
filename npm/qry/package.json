@@ -1,0 +1,17 @@
+{
+  "name": "@justestif/qry",
+  "version": "0.0.0",
+  "description": "Terminal-native agent-first web search CLI",
+  "bin": {
+    "qry": "bin.js"
+  },
+  "scripts": {
+    "postinstall": "node install.js"
+  },
+  "files": ["bin.js", "install.js", "bin/"],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/justestif/qry"
+  }
+}

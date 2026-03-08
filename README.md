@@ -20,6 +20,12 @@ qry "what is the latest version of numpy"
 
 ## Install
 
+**npm (recommended):**
+```bash
+npm install -g @justestif/qry
+```
+
+**mise:**
 ```bash
 mise use -g go:github.com/justestif/qry@latest
 mise reshim
@@ -36,6 +42,12 @@ Adapters are separate binaries that do the actual searching. Install the ones yo
 | `qry-adapter-ddg-scrape` | DuckDuckGo Lite (scraping) | ✗ |
 | `qry-adapter-exa` | Exa AI (via MCP) | ✗ |
 
+**npm:**
+```bash
+npm install -g @justestif/qry-adapter-ddg-scrape
+```
+
+**mise:**
 ```bash
 mise use -g go:github.com/justestif/qry/adapters/ddg-scrape@latest
 mise reshim
