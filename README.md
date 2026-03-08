@@ -1,5 +1,7 @@
 # qry
 
+**[justestif.github.io/qry](https://justestif.github.io/qry/)**
+
 A terminal-native, agent-first web search CLI. Routes queries through swappable adapter binaries and always outputs JSON.
 
 ```bash
