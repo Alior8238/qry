@@ -63,8 +63,8 @@ jobs:
 
           for adapter in adapters/*/; do
             name=$(basename "$adapter")
-            # skip mock and google-api (deprecated)
-            if [ "$name" = "mock" ] || [ "$name" = "google-api" ]; then
+            # skip mock
+            if [ "$name" = "qry-adapter-mock" ]; then
               continue
             fi
             go build -ldflags="-s -w" \
