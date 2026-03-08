@@ -21,6 +21,17 @@ run = "go mod tidy"
 description = "Run go vet"
 run = "go vet ./..."
 
+[tasks.pre-commit]
+description = "Pre-commit hook: run go vet on staged Go files"
+run = """
+STAGED_GO=$(echo "$STAGED" | tr ' ' '\n' | grep '[.]go$' || true)
+if [ -z "$STAGED_GO" ]; then
+  exit 0
+fi
+echo "go vet ./..."
+go vet ./...
+"""
+
 [tasks.build-all]
 description = "Build qry and all adapters"
 run = """
