@@ -139,8 +139,6 @@ jobs:
           registry-url: "https://registry.npmjs.org"
 
       - name: Stamp versions and publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
           TAG=${{ github.ref_name }}
           VERSION=${TAG#v}
@@ -153,6 +151,6 @@ jobs:
 
             echo "Publishing @justestif/${bin}@${VERSION}..."
             cd "npm/${bin}"
-            npm publish --access public
+            npm publish --access public --provenance
             cd - > /dev/null
           done
